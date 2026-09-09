@@ -20,6 +20,7 @@
   display:block;
   width:min(100%,19.8rem);
   height:auto;
+  margin-left:-1.15rem;
   margin-bottom:1.35rem;
   filter:brightness(0) invert(1);
   opacity:.98;
@@ -173,6 +174,7 @@
 
   .footer-logo{
     width:min(100%,18rem);
+    margin-left:-.8rem;
   }
 
   .footer-text{
