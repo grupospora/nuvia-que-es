@@ -1,6 +1,6 @@
 .site-footer{
   margin-top:0;
-  padding-top:clamp(3.5rem,6vw,5rem);
+  padding-top:clamp(2.6rem,4vw,3.5rem);
   color:rgba(255,255,255,.9);
   background:#09213f;
 }
@@ -20,7 +20,7 @@
   display:block;
   width:min(100%,19.8rem);
   height:auto;
-  margin-bottom:1.45rem;
+  margin-bottom:1.35rem;
   filter:brightness(0) invert(1);
   opacity:.98;
 }
@@ -35,15 +35,15 @@
 }
 
 .footer-text{
-  max-width:42ch;
+  max-width:31ch;
   margin:0;
-  color:rgba(255,255,255,.7);
-  font-size:.86rem;
-  line-height:1.7;
+  color:rgba(255,255,255,.78);
+  font-size:1.08rem;
+  line-height:1.55;
 }
 
 .footer-column{
-  padding-top:11.1rem;
+  padding-top:0;
 }
 
 .footer-column h3{
@@ -88,7 +88,7 @@
   display:flex;
   align-items:center;
   gap:.6rem;
-  margin-top:1.15rem;
+  margin-top:1rem;
 }
 
 .footer-social a{
@@ -129,7 +129,7 @@
   justify-content:space-between;
   align-items:center;
   gap:2rem;
-  margin-top:clamp(2rem,3.5vw,3rem);
+  margin-top:clamp(1.4rem,2.5vw,2rem);
   padding-block:1.35rem 1.7rem;
   border-top:1px solid rgba(255,255,255,.14);
 }
@@ -159,15 +159,11 @@
   .footer-grid{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
-
-  .footer-column{
-    padding-top:0;
-  }
 }
 
 @media(max-width:620px){
   .site-footer{
-    padding-top:3rem;
+    padding-top:2.4rem;
   }
 
   .footer-grid{
@@ -177,6 +173,11 @@
 
   .footer-logo{
     width:min(100%,18rem);
+  }
+
+  .footer-text{
+    max-width:34ch;
+    font-size:1rem;
   }
 
   .footer-bottom{
