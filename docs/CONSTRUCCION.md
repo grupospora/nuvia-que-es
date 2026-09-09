@@ -2,13 +2,15 @@
 
 ## Estado
 
-Fase de preparación de la **página piloto de estilo**.
+**Página piloto de estilo v0.1 construida.**
+
+La página está preparada para una primera revisión visual de GS antes de desarrollar el bloque completo.
 
 ## Objetivo inmediato
 
-Construir una primera página real y sencilla de «Descubrir» que permita validar el lenguaje visual inicial antes de desarrollar el bloque completo.
+Revisar la primera página real de «Descubrir» y decidir qué decisiones visuales deben conservarse, modificarse o descartarse antes de construir el resto de «Qué es NUVIA».
 
-## La página piloto debe permitir revisar
+## La página piloto permite revisar
 
 - sensación general;
 - coherencia con BASELINE sin clonarlo;
@@ -23,7 +25,7 @@ Construir una primera página real y sencilla de «Descubrir» que permita valid
 - comportamiento responsive;
 - lectura por capas.
 
-## Contenido previsto del piloto
+## Contenido incluido en el piloto v0.1
 
 1. Entrada / hero «Qué es NUVIA».
 2. Inicio de Descubrir.
@@ -32,6 +34,38 @@ Construir una primera página real y sencilla de «Descubrir» que permita valid
 5. Tarjeta de demostración PIB.
 6. Señales de confianza.
 7. Cierre / CTA provisional.
+
+## Lectura realizada de BASELINE
+
+BASELINE se ha utilizado exclusivamente como referencia visual y de experiencia.
+
+Elementos observados y utilizados como punto de partida experimental:
+
+- fondo general claro `#F4F6F9`;
+- azul institucional profundo para bloques de presencia;
+- verde como acento;
+- superficies blancas y crema;
+- tipografía sans serif limpia y poco ornamental;
+- encabezado contenido y navegación ligera;
+- grandes titulares con peso medio;
+- divisores sutiles;
+- tarjetas de baja elevación;
+- uso de numeración y pequeños rótulos en mayúsculas;
+- sensación de calma, orden y solvencia.
+
+## Mejoras deliberadamente probadas frente a BASELINE
+
+El piloto no copia la implementación técnica ni todas sus decisiones. Se están probando expresamente:
+
+- responsive real sin ancho mínimo de escritorio;
+- mayor control del ancho de lectura;
+- más espacio vertical para contenido explicativo;
+- lectura por capas más marcada;
+- componentes con semántica HTML y clases reutilizables en lugar de estilos inline;
+- estados claros para recursos reales, muestras y pendientes;
+- menor densidad de navegación durante una experiencia narrativa.
+
+Estas decisiones son todavía **experimentales** y no forman parte de la guía gobernada hasta que GS las valide.
 
 ## Regla de relación con BASELINE
 
