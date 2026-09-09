@@ -8,14 +8,145 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <main>
-    <section class="pilot-shell" aria-labelledby="pilot-title">
-      <p class="eyebrow">NUVIA · Piloto de estilo</p>
-      <h1 id="pilot-title">Qué es NUVIA</h1>
-      <p class="lead">Esta página es únicamente el punto de partida técnico para la primera revisión visual. El contenido y el estilo se desarrollarán en la siguiente iteración.</p>
-      <p class="status">Estado: estructura inicial creada. Página piloto pendiente de diseño.</p>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#inicio" aria-label="NUVIA · Inicio">NUVIA</a>
+      <nav class="pilot-nav" aria-label="Navegación del piloto">
+        <a href="#descubrir" aria-current="page">Descubrir</a>
+        <a href="#metodo">Cómo trabajamos</a>
+        <a href="#pib">Ejemplo PIB</a>
+      </nav>
+      <span class="pilot-badge">Piloto de estilo</span>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Qué es NUVIA</p>
+          <h1>Comprender mejor para decidir con más criterio.</h1>
+          <p class="hero-lead">Existimos para ayudarte a comprender mejor las cuestiones que afectan al patrimonio de tu Familia y a desarrollar criterio para gestionarlo con mayor autonomía y perspectiva.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#descubrir">Empezar por Descubrir</a>
+            <a class="btn btn-ghost" href="#metodo">Ver cómo trabajamos →</a>
+          </div>
+        </div>
+        <aside class="hero-note" aria-label="Orientación de la experiencia">
+          <span class="note-index">01</span>
+          <p>Conoce NUVIA en unos minutos. Empieza por lo esencial y profundiza solo cuando tenga sentido para ti.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="descubrir" class="section section-light">
+      <div class="shell reading-grid">
+        <div class="section-marker">Descubrir · 1 de 4</div>
+        <div class="reading-copy">
+          <p class="eyebrow eyebrow-dark">Orientarte</p>
+          <h2>Cuidar el patrimonio de tu Familia no exige saberlo todo.</h2>
+          <p class="standfirst">Información hay mucha. Lo difícil es distinguir qué merece atención, entender qué significa y situarlo en contexto.</p>
+          <p>NUVIA nace para ayudarte precisamente ahí: seleccionando, contrastando, organizando y explicando información que puede ser útil para las Familias.</p>
+          <div class="highlight">
+            <span class="highlight-rule" aria-hidden="true"></span>
+            <p>Ahí empieza NUVIA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="section section-cream">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">De la información a la comprensión</p>
+            <h2>Un proceso sencillo para poner cada dato en su sitio.</h2>
+          </div>
+          <p class="section-intro">No se trata de añadir más ruido. Se trata de trabajar la información antes de ponerla a tu alcance.</p>
+        </div>
+
+        <ol class="method-grid" aria-label="Método NUVIA">
+          <li class="method-card">
+            <span class="method-number">01</span>
+            <h3>Seleccionar</h3>
+            <p>Identificar qué merece atención y qué puede aportar valor real.</p>
+          </li>
+          <li class="method-card">
+            <span class="method-number">02</span>
+            <h3>Contrastar</h3>
+            <p>Revisar fuentes, datos y opiniones antes de utilizarlos.</p>
+          </li>
+          <li class="method-card">
+            <span class="method-number">03</span>
+            <h3>Contextualizar</h3>
+            <p>Explicar qué significa una información y cuáles son sus límites.</p>
+          </li>
+          <li class="method-card">
+            <span class="method-number">04</span>
+            <h3>Explicar</h3>
+            <p>Convertir complejidad en una comprensión útil y progresiva.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="pib" class="section section-light">
+      <div class="shell demo-grid">
+        <div class="demo-copy">
+          <p class="eyebrow eyebrow-dark">Un ejemplo</p>
+          <h2>¿Qué significa realmente que el PIB crezca?</h2>
+          <p class="standfirst">El PIB aparece constantemente en las noticias, pero una cifra aislada dice menos de lo que parece.</p>
+          <p>El PIB mide la actividad económica agregada. En términos reales, ayuda a observar si la producción de bienes y servicios aumenta o disminuye descontando el efecto de los precios.</p>
+          <p class="demo-warning"><strong>El PIB no basta por sí solo para saber lo bien o mal que va una economía.</strong> Hace falta contexto y, normalmente, otros indicadores.</p>
+          <div class="resource-row" aria-label="Recursos relacionados">
+            <span class="resource-chip resource-live">Fuente oficial disponible</span>
+            <span class="resource-chip resource-sample">Glosario · muestra</span>
+            <span class="resource-chip resource-sample">Vídeo · pendiente</span>
+          </div>
+        </div>
+
+        <aside class="data-card" aria-label="Dato PIB de referencia">
+          <p class="data-kicker">España · PIB real</p>
+          <div class="data-value">+0,7%</div>
+          <p class="data-period">2T 2026 · respecto al trimestre anterior</p>
+          <div class="data-rule"></div>
+          <p class="data-caption">Avance de la Contabilidad Nacional Trimestral de España.</p>
+          <p class="data-source">Fuente: INE · publicado el 30/07/2026</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust-band" aria-labelledby="trust-title">
+      <div class="shell trust-grid">
+        <div>
+          <p class="eyebrow">Confianza</p>
+          <h2 id="trust-title">Saber de dónde viene la información también forma parte de comprenderla.</h2>
+        </div>
+        <div class="trust-list">
+          <div><span>01</span><p>Indicamos el origen de los datos siempre que sea posible.</p></div>
+          <div><span>02</span><p>Diferenciamos hechos, contexto y opinión profesional.</p></div>
+          <div><span>03</span><p>Hacemos visibles los límites cuando son importantes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="shell closing-inner">
+        <div>
+          <p class="eyebrow eyebrow-dark">Siguiente paso</p>
+          <h2>Esto es solo el principio de Descubrir.</h2>
+          <p>La versión completa continuará con cómo podemos ayudarte, cómo funciona la Comunidad y qué es NUVIA hoy.</p>
+        </div>
+        <a class="btn btn-secondary" href="#inicio">Volver al inicio ↑</a>
+      </div>
     </section>
   </main>
-  <script src="assets/js/main.js"></script>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span>NUVIA</span>
+      <span>Página piloto de estilo · no publicada como experiencia definitiva</span>
+    </div>
+  </footer>
 </body>
 </html>
