@@ -20,19 +20,9 @@
   display:block;
   width:min(100%,19.8rem);
   height:auto;
-  margin-left:-1.15rem;
   margin-bottom:1.35rem;
   filter:brightness(0) invert(1);
   opacity:.98;
-}
-
-.footer-motto{
-  max-width:27ch;
-  margin:0 0 1rem;
-  color:#fff;
-  font-family:var(--font-heading);
-  font-size:1.18rem;
-  line-height:1.5;
 }
 
 .footer-text{
@@ -174,7 +164,6 @@
 
   .footer-logo{
     width:min(100%,18rem);
-    margin-left:-.8rem;
   }
 
   .footer-text{
