@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="NUVIA · Inicio">
+      <img src="{{ '/assets/img/nuvia-logo-horizontal-lineal.svg' | relative_url }}" alt="NUVIA Family Wealth">
+    </a>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="{{ '/#descubrir' | relative_url }}"{% if page.nav_key == 'descubrir' %} aria-current="page"{% endif %}>Descubrir</a>
+      <a href="{{ '/#metodo' | relative_url }}"{% if page.nav_key == 'metodo' %} aria-current="page"{% endif %}>Cómo trabajamos</a>
+      <a href="{{ '/#pib' | relative_url }}"{% if page.nav_key == 'pib' %} aria-current="page"{% endif %}>Ejemplo PIB</a>
+    </nav>
+  </div>
+</header>
