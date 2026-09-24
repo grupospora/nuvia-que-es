@@ -79,69 +79,75 @@ Las decisiones visuales que GS valide en el piloto podrán incorporarse a `PORTA
 
 Las pruebas todavía no validadas permanecen en este repositorio y no constituyen criterio general del Portal.
 
-## Arquitectura técnica inicial
+## Arquitectura técnica vigente
 
-- HTML plano.
-- CSS plano.
-- JavaScript solo cuando aporte valor real.
-- Sin framework.
+Tras contrastar el repositorio real de `NUVIA-PORTAL-BASELINE`, la sección se ha alineado con su patrón técnico de construcción y publicación.
+
+### Base tecnológica
+
+- HTML estático.
+- CSS compartido.
+- JavaScript solo cuando sea necesario.
+- Node.js como herramienta de validación y build.
+- GitHub Actions como pipeline de construcción y despliegue.
+- GitHub Pages publica el artefacto generado en `dist/`.
+- Sin framework frontend.
 - Sin backend.
-- GitHub Pages como alojamiento previsto.
-- No modificar BASELINE.
 
-## Integración futura
+### Componentes compartidos
 
-«Qué es NUVIA» no se integrará técnicamente en BASELINE.
+La cabecera y el footer siguen siendo componentes únicos y reutilizables, pero ya no dependen de Jekyll/Liquid:
 
-Cuando el bloque esté cerrado y validado se creará el futuro repositorio `nuvia-portal`, y el contenido, los patrones y los componentes aprobados se migrarán selectivamente a él.
+- `src/includes/header.html`
+- `src/includes/footer.html`
 
+Las páginas fuente contienen marcadores de composición. `scripts/build-site.mjs` inserta los componentes, aplica el estado activo de navegación y genera las páginas finales en `dist/`.
 
-## Componentes compartidos
+### Validación
 
-La cabecera y el pie validados se mantienen como componentes compartidos de toda la sección mediante Jekyll/Liquid, compatible de forma nativa con GitHub Pages:
+`npm run validate` comprueba la integridad de la fuente.
 
-- `_includes/header.html` — cabecera v1 reutilizable.
-- `_includes/footer.html` — footer v1 reutilizable.
+`npm run build`:
 
-Cada página de la sección debe incluir front matter de Jekyll y reutilizar ambos componentes con:
+1. valida la fuente;
+2. genera `dist/`;
+3. copia los assets;
+4. valida las referencias locales y comprueba que no queden marcadores o sintaxis de plantilla sin resolver.
 
-```liquid
-{% include header.html %}
-...
-{% include footer.html %}
+### Publicación
+
+`.github/workflows/pages.yml` reproduce el patrón de BASELINE:
+
+```text
+main
+→ Node.js
+→ npm run build
+→ dist/
+→ upload-pages-artifact
+→ deploy-pages
 ```
 
-Las rutas de recursos y anclas globales de estos componentes utilizan `relative_url` para seguir funcionando bajo el subdirectorio de publicación de GitHub Pages. La página puede declarar `nav_key` en su front matter para activar el estado correspondiente de navegación sin duplicar la cabecera.
+### Decisión sobre Jekyll
 
-Este patrón se adopta para evitar duplicación y asegurar que cualquier cambio futuro en cabecera o footer se propague automáticamente a todas las páginas de «Qué es NUVIA».
-
+La solución Jekyll/Liquid utilizada inicialmente para reutilizar cabecera y footer queda retirada. Era válida para el piloto, pero introduciría una segunda cadena de composición distinta de la utilizada por BASELINE. La migración a Node reduce diferencias técnicas y facilita la futura integración.
 
 ## Sección pública construida
 
-La sección «Qué es NUVIA» ya dispone de una primera versión completa navegable, organizada en cuatro bloques públicos sin secuencia obligatoria:
+La sección «Qué es NUVIA» dispone de una primera versión completa navegable:
 
-1. `descubrir.html` — propósito, orientación, cómo puede ayudar NUVIA, Comunidad y NUVIA hoy.
-2. `comprender.html` — tratamiento de la información, uso, Comunidad, responsabilidad de publicación, límites de ayuda e Información Familiar.
-3. `explorar.html` — áreas temáticas y recursos transversales.
-4. `quienes-somos.html` — propósito, modelo de relación, Portal, Experiencias, Colaboradores, Agente, privacidad y evolución.
+1. `index.html` — entrada general.
+2. `descubrir.html` — propósito, orientación, cómo puede ayudar NUVIA, Comunidad y NUVIA hoy.
+3. `comprender.html` — tratamiento de la información, uso, responsabilidad de publicación, límites e Información Familiar.
+4. `explorar.html` — áreas temáticas y recursos transversales.
+5. `quienes-somos.html` — propósito, modelo, Portal, Experiencias, Colaboradores, Agente, privacidad y evolución.
 
-La portada `index.html` funciona como entrada a los cuatro bloques.
-
-### Navegación compartida
-
-La cabecera v1 utiliza como navegación principal de esta sección:
+La navegación principal compartida utiliza:
 
 - Descubrir
 - Comprender
 - Explorar NUVIA
 - Quiénes somos
 
-El estado activo se controla mediante `nav_key` en el front matter de cada página.
+## Integración futura
 
-### Layout compartido
-
-Se ha añadido `_layouts/default.html` para centralizar el documento HTML base, metadatos comunes, carga de estilos y uso de cabecera/footer. Las páginas contienen únicamente su front matter y su contenido principal.
-
-### Criterio de construcción
-
-Esta versión convierte el piloto visual en una sección pública coherente, manteniendo el principio de simplicidad deliberada: Jekyll/Liquid sobre GitHub Pages, sin framework de frontend, sin backend y con HTML semántico y CSS compartido.
+«Qué es NUVIA» no se integra técnicamente en BASELINE. Ambos trabajos se mantienen autónomos durante la experimentación, pero comparten el mismo patrón de stack, build y despliegue para reducir la fricción cuando el trabajo validado se traslade al futuro `nuvia-portal`.
