@@ -5,42 +5,34 @@
       <p class="footer-text">Ayudamos a nuestras familias a desarrollar criterio para comprender, proteger y hacer crecer su patrimonio.</p>
 
       <nav class="footer-social" aria-label="Redes sociales">
-        <a href="#" aria-label="Instagram" title="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
-        </a>
-        <a href="#" aria-label="TikTok" title="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4v10.1a4.6 4.6 0 1 1-4-4.55"></path><path d="M15 4c.7 2.7 2.3 4.3 5 5"></path></svg>
-        </a>
-        <a href="#" aria-label="YouTube" title="YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"></rect><path d="m10 9 5 3-5 3z"></path></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn" title="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="3" height="10"></rect><circle cx="5.5" cy="5.5" r="1.5"></circle><path d="M11 19V9h3v1.7c.9-1.3 2-2 3.6-2 2.4 0 3.4 1.6 3.4 4.4V19h-3v-5.2c0-1.4-.5-2.3-1.8-2.3-1.4 0-2.2 1-2.2 2.8V19z"></path></svg>
-        </a>
+        <a href="#" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a>
+        <a href="#" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4v10.1a4.6 4.6 0 1 1-4-4.55"></path><path d="M15 4c.7 2.7 2.3 4.3 5 5"></path></svg></a>
+        <a href="#" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"></rect><path d="m10 9 5 3-5 3z"></path></svg></a>
+        <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="3" height="10"></rect><circle cx="5.5" cy="5.5" r="1.5"></circle><path d="M11 19V9h3v1.7c.9-1.3 2-2 3.6-2 2.4 0 3.4 1.6 3.4 4.4V19h-3v-5.2c0-1.4-.5-2.3-1.8-2.3-1.4 0-2.2 1-2.2 2.8V19z"></path></svg></a>
       </nav>
     </div>
 
     <div class="footer-column">
       <h3>Explorar</h3>
       <ul>
-        <li><a href="#">Ahorro e inversión</a></li>
-        <li><a href="#">Mis impuestos</a></li>
-        <li><a href="#">Jubilación</a></li>
-        <li><a href="#">Vivienda y coste familiar</a></li>
-        <li><a href="#">Hijos y legado</a></li>
-        <li><a href="#">Bienestar</a></li>
+        <li><a href="{{ '/explorar.html#ahorro-inversion' | relative_url }}">Ahorro e inversión</a></li>
+        <li><a href="{{ '/explorar.html#impuestos' | relative_url }}">Mis impuestos</a></li>
+        <li><a href="{{ '/explorar.html#jubilacion' | relative_url }}">Jubilación</a></li>
+        <li><a href="{{ '/explorar.html#vivienda' | relative_url }}">Vivienda y coste familiar</a></li>
+        <li><a href="{{ '/explorar.html#hijos-legado' | relative_url }}">Hijos y legado</a></li>
+        <li><a href="{{ '/explorar.html#bienestar' | relative_url }}">Bienestar</a></li>
       </ul>
     </div>
 
     <div class="footer-column">
       <h3>Recursos</h3>
       <ul>
-        <li><a href="#">Academia</a></li>
-        <li><a href="#">Glosario</a></li>
-        <li><a href="#">Biblioteca</a></li>
-        <li><a href="#">Mercados</a></li>
-        <li><a href="#">Herramientas</a></li>
-        <li><a href="#">Colaboradores</a></li>
+        <li><a href="{{ '/explorar.html#recursos' | relative_url }}">Academia</a></li>
+        <li><a href="{{ '/explorar.html#recursos' | relative_url }}">Glosario</a></li>
+        <li><a href="{{ '/explorar.html#recursos' | relative_url }}">Biblioteca</a></li>
+        <li><a href="{{ '/explorar.html#recursos' | relative_url }}">Mercados</a></li>
+        <li><a href="{{ '/explorar.html#recursos' | relative_url }}">Herramientas</a></li>
+        <li><a href="{{ '/explorar.html#recursos' | relative_url }}">Colaboradores</a></li>
       </ul>
     </div>
 
@@ -48,10 +40,11 @@
       <h3>NUVIA</h3>
       <ul>
         <li><a href="{{ '/' | relative_url }}">Qué es NUVIA</a></li>
-        <li><a href="{{ '/#descubrir' | relative_url }}">Descubrir</a></li>
-        <li><a href="{{ '/#metodo' | relative_url }}">Cómo trabajamos</a></li>
-        <li><a href="#">Quiénes somos</a></li>
-        <li><a href="#">Comunidad</a></li>
+        <li><a href="{{ '/descubrir.html' | relative_url }}">Descubrir</a></li>
+        <li><a href="{{ '/comprender.html' | relative_url }}">Comprender</a></li>
+        <li><a href="{{ '/explorar.html' | relative_url }}">Explorar NUVIA</a></li>
+        <li><a href="{{ '/quienes-somos.html' | relative_url }}">Quiénes somos</a></li>
+        <li><a href="{{ '/descubrir.html#comunidad-confianza' | relative_url }}">Comunidad</a></li>
         <li><a href="#">Ayuda</a></li>
         <li><a href="#">Contacto</a></li>
       </ul>
