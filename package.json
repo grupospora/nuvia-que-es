@@ -1,0 +1,14 @@
+{
+  "name": "nuvia-que-es",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/check-source.mjs .",
+    "build": "npm run validate && node scripts/build-site.mjs && node scripts/check-static-site.mjs dist",
+    "serve": "npm run build && node scripts/serve-local.mjs dist"
+  }
+}
