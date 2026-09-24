@@ -1,46 +1,84 @@
 # NUVIA — Qué es NUVIA
 
-Prototipo autónomo del bloque **«Qué es NUVIA»** y laboratorio visual del futuro Portal NUVIA.
+Proyecto autónomo de la sección pública **«Qué es NUVIA»** y laboratorio de construcción del futuro Portal NUVIA.
 
 ## Propósito
 
-Este repositorio se utiliza para construir, probar y validar el bloque público «Qué es NUVIA» de forma independiente del resto del desarrollo del Portal.
+Este repositorio se utiliza para construir, probar y validar «Qué es NUVIA» de forma independiente, manteniendo compatibilidad técnica con el patrón de publicación de `NUVIA-PORTAL-BASELINE`.
 
 ## Relación con otros repositorios
 
-- `NUVIA-PORTAL-BASELINE`: referencia visual y de experiencia. No es una base técnica ni una especificación cerrada.
-- `nuvia-docs`: contiene la documentación gobernada del proyecto, incluida `PORTAL-GUIA-ESTILO.md`.
-- `nuvia-portal`: futuro repositorio integrado del Portal. Cuando «Qué es NUVIA» esté validado, se migrará selectivamente a ese repositorio.
+- `NUVIA-PORTAL-BASELINE`: referencia visual y de experiencia y, desde esta migración, referencia del **patrón técnico de build y despliegue**.
+- `nuvia-docs`: documentación gobernada del proyecto, incluida `PORTAL-GUIA-ESTILO.md`.
+- `nuvia-portal`: futuro repositorio integrado del Portal. El trabajo validado de esta sección se migrará selectivamente allí.
 
-## Principios de construcción
+## Techstack
 
-- HTML, CSS y JavaScript plano.
-- Simplicidad deliberada.
-- Mobile-first y responsive.
-- Legibilidad y comprensión por encima del impacto visual.
-- BASELINE inspira; no se clona.
-- Las mejoras visuales validadas se documentan en `PORTAL-GUIA-ESTILO.md`.
-- No se simulan recursos o funcionalidades que todavía no existan.
+- HTML estático.
+- CSS compartido.
+- JavaScript solo cuando aporte valor real.
+- Node.js 20 o posterior para validación, build y servidor local.
+- GitHub Actions para construir y publicar.
+- GitHub Pages publica exclusivamente el artefacto generado en `dist/`.
+- Sin framework frontend.
+- Sin backend.
 
-## Fase actual
+## Componentes compartidos
 
-**Página piloto de estilo.**
+La cabecera y el footer tienen una única fuente:
 
-Antes de construir el bloque completo se desarrollará una primera página real y sencilla para validar el lenguaje visual inicial: tipografía, jerarquía, ritmo, espaciado, color, contenedores, tarjetas, CTA y comportamiento responsive.
+- `src/includes/header.html`
+- `src/includes/footer.html`
 
-Una vez validado el punto de partida visual, se construirá el resto de «Qué es NUVIA».
+Las páginas fuente contienen los marcadores `<!-- NUVIA_HEADER -->` y `<!-- NUVIA_FOOTER -->`. Durante el build, Node inserta ambos componentes y genera HTML final estático en `dist/`.
 
+## Páginas
 
-## Estado actual
+- `index.html` — entrada a Qué es NUVIA.
+- `descubrir.html` — Descubrir.
+- `comprender.html` — Comprender.
+- `explorar.html` — Explorar NUVIA.
+- `quienes-somos.html` — Quiénes somos.
 
-La primera versión completa de la sección pública «Qué es NUVIA» está construida y publicada mediante GitHub Pages.
+## Trabajo local
 
-Páginas principales:
+Requisito: Node.js 20 o posterior.
 
-- `/` — entrada a Qué es NUVIA.
-- `/descubrir.html` — Descubrir.
-- `/comprender.html` — Comprender.
-- `/explorar.html` — Explorar NUVIA.
-- `/quienes-somos.html` — Quiénes somos.
+```bash
+npm run serve
+```
 
-La cabecera y el footer se mantienen como componentes compartidos en `_includes/`, y el documento base común en `_layouts/default.html`.
+El comando valida la fuente, genera `dist/`, valida el resultado y sirve la web en `http://127.0.0.1:4173`.
+
+## Validación y compilación
+
+```bash
+npm run validate
+npm run build
+```
+
+La validación comprueba, entre otras cosas:
+
+- existencia de las cinco páginas públicas;
+- títulos y metadatos;
+- componentes compartidos;
+- ausencia de sintaxis residual Jekyll/Liquid;
+- resolución de cabecera y footer durante el build;
+- referencias locales válidas en el artefacto final.
+
+## Publicación
+
+Cada actualización de `main` ejecuta `.github/workflows/pages.yml`.
+
+```text
+fuente
+→ npm run build
+→ dist/
+→ GitHub Pages
+```
+
+`dist/` es un artefacto generado y no se versiona.
+
+## Principio de integración
+
+La sección mantiene identidad y contenido propios durante su fase de construcción, pero evita una arquitectura técnica paralela. El objetivo es reducir fricción cuando sus componentes y páginas deban integrarse en el futuro Portal.
