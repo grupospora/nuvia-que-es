@@ -94,3 +94,23 @@ Las pruebas todavía no validadas permanecen en este repositorio y no constituye
 «Qué es NUVIA» no se integrará técnicamente en BASELINE.
 
 Cuando el bloque esté cerrado y validado se creará el futuro repositorio `nuvia-portal`, y el contenido, los patrones y los componentes aprobados se migrarán selectivamente a él.
+
+
+## Componentes compartidos
+
+La cabecera y el pie validados se mantienen como componentes compartidos de toda la sección mediante Jekyll/Liquid, compatible de forma nativa con GitHub Pages:
+
+- `_includes/header.html` — cabecera v1 reutilizable.
+- `_includes/footer.html` — footer v1 reutilizable.
+
+Cada página de la sección debe incluir front matter de Jekyll y reutilizar ambos componentes con:
+
+```liquid
+{% include header.html %}
+...
+{% include footer.html %}
+```
+
+Las rutas de recursos y anclas globales de estos componentes utilizan `relative_url` para seguir funcionando bajo el subdirectorio de publicación de GitHub Pages. La página puede declarar `nav_key` en su front matter para activar el estado correspondiente de navegación sin duplicar la cabecera.
+
+Este patrón se adopta para evitar duplicación y asegurar que cualquier cambio futuro en cabecera o footer se propague automáticamente a todas las páginas de «Qué es NUVIA».
