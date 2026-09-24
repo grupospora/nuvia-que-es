@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} — NUVIA</title>
+  <meta name="description" content="{{ page.description }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon-nuvia.svg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}">
+</head>
+<body>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+</body>
+</html>
