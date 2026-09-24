@@ -114,3 +114,34 @@ Cada página de la sección debe incluir front matter de Jekyll y reutilizar amb
 Las rutas de recursos y anclas globales de estos componentes utilizan `relative_url` para seguir funcionando bajo el subdirectorio de publicación de GitHub Pages. La página puede declarar `nav_key` en su front matter para activar el estado correspondiente de navegación sin duplicar la cabecera.
 
 Este patrón se adopta para evitar duplicación y asegurar que cualquier cambio futuro en cabecera o footer se propague automáticamente a todas las páginas de «Qué es NUVIA».
+
+
+## Sección pública construida
+
+La sección «Qué es NUVIA» ya dispone de una primera versión completa navegable, organizada en cuatro bloques públicos sin secuencia obligatoria:
+
+1. `descubrir.html` — propósito, orientación, cómo puede ayudar NUVIA, Comunidad y NUVIA hoy.
+2. `comprender.html` — tratamiento de la información, uso, Comunidad, responsabilidad de publicación, límites de ayuda e Información Familiar.
+3. `explorar.html` — áreas temáticas y recursos transversales.
+4. `quienes-somos.html` — propósito, modelo de relación, Portal, Experiencias, Colaboradores, Agente, privacidad y evolución.
+
+La portada `index.html` funciona como entrada a los cuatro bloques.
+
+### Navegación compartida
+
+La cabecera v1 utiliza como navegación principal de esta sección:
+
+- Descubrir
+- Comprender
+- Explorar NUVIA
+- Quiénes somos
+
+El estado activo se controla mediante `nav_key` en el front matter de cada página.
+
+### Layout compartido
+
+Se ha añadido `_layouts/default.html` para centralizar el documento HTML base, metadatos comunes, carga de estilos y uso de cabecera/footer. Las páginas contienen únicamente su front matter y su contenido principal.
+
+### Criterio de construcción
+
+Esta versión convierte el piloto visual en una sección pública coherente, manteniendo el principio de simplicidad deliberada: Jekyll/Liquid sobre GitHub Pages, sin framework de frontend, sin backend y con HTML semántico y CSS compartido.
