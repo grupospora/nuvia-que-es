@@ -5,9 +5,10 @@
     </a>
 
     <nav class="site-nav" aria-label="Navegación principal">
-      <a href="{{ '/#descubrir' | relative_url }}"{% if page.nav_key == 'descubrir' %} aria-current="page"{% endif %}>Descubrir</a>
-      <a href="{{ '/#metodo' | relative_url }}"{% if page.nav_key == 'metodo' %} aria-current="page"{% endif %}>Cómo trabajamos</a>
-      <a href="{{ '/#pib' | relative_url }}"{% if page.nav_key == 'pib' %} aria-current="page"{% endif %}>Ejemplo PIB</a>
+      <a href="{{ '/descubrir.html' | relative_url }}"{% if page.nav_key == 'descubrir' %} aria-current="page"{% endif %}>Descubrir</a>
+      <a href="{{ '/comprender.html' | relative_url }}"{% if page.nav_key == 'comprender' %} aria-current="page"{% endif %}>Comprender</a>
+      <a href="{{ '/explorar.html' | relative_url }}"{% if page.nav_key == 'explorar' %} aria-current="page"{% endif %}>Explorar NUVIA</a>
+      <a href="{{ '/quienes-somos.html' | relative_url }}"{% if page.nav_key == 'quienes' %} aria-current="page"{% endif %}>Quiénes somos</a>
     </nav>
   </div>
 </header>
