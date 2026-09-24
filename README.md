@@ -29,3 +29,18 @@ Este repositorio se utiliza para construir, probar y validar el bloque público 
 Antes de construir el bloque completo se desarrollará una primera página real y sencilla para validar el lenguaje visual inicial: tipografía, jerarquía, ritmo, espaciado, color, contenedores, tarjetas, CTA y comportamiento responsive.
 
 Una vez validado el punto de partida visual, se construirá el resto de «Qué es NUVIA».
+
+
+## Estado actual
+
+La primera versión completa de la sección pública «Qué es NUVIA» está construida y publicada mediante GitHub Pages.
+
+Páginas principales:
+
+- `/` — entrada a Qué es NUVIA.
+- `/descubrir.html` — Descubrir.
+- `/comprender.html` — Comprender.
+- `/explorar.html` — Explorar NUVIA.
+- `/quienes-somos.html` — Quiénes somos.
+
+La cabecera y el footer se mantienen como componentes compartidos en `_includes/`, y el documento base común en `_layouts/default.html`.
