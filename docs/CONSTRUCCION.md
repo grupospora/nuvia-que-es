@@ -151,3 +151,8 @@ La navegación principal compartida utiliza:
 ## Integración futura
 
 «Qué es NUVIA» no se integra técnicamente en BASELINE. Ambos trabajos se mantienen autónomos durante la experimentación, pero comparten el mismo patrón de stack, build y despliegue para reducir la fricción cuando el trabajo validado se traslade al futuro `nuvia-portal`.
+
+
+## Configuración de GitHub Pages
+
+GitHub Pages está configurado para publicar mediante **GitHub Actions**, no mediante `Deploy from a branch`. Esto garantiza que producción reciba exclusivamente el artefacto validado de `dist/` y evita que las páginas fuente sobrescriban el resultado del build.
